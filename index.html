@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mikrofin Email HTML</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+    body {
+      background: #0e0f2a;
+      background-image: url("https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 15px;
+      font-family: "Arial", sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Poppins", Arial, sans-serif;
+      line-height: 1.2;
+    }
+
+    p {
+      font-family: "Raleway", Arial, sans-serif;
+    }
+
+    b {
+      font-weight: bold;
+    }
+
+    .main-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+    }
+    .mf-logo {
+      text-align: center;
+      padding: 50px 0;
+    }
+    .mf-logo img {
+      width: 200px;
+      height: 100px;
+    }
+
+    .logo-strip {
+      margin-bottom: 50px;
+    }
+
+    .logo-strip table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    .logo-strip td {
+      text-align: center;
+      vertical-align: middle;
+      padding: 20px;
+      position: relative;
+    }
+    .logo-strip td:not(:last-child):after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 10px;
+      bottom: 10px;
+      width: 1px;
+      background-color: white;
+    }
+    .mf2go-image img {
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: auto;
+      width: 100%;
+      margin-bottom: -5px;
+      border-top-right-radius: 50px;
+    }
+    .mf2go-content {
+      padding: 20px 30px;
+      color: #051b60;
+      background: #ffffff;
+      font-size: 22px;
+      border-bottom-left-radius: 50px;
+    }
+
+    .mf2go-content p {
+      font-weight: 300;
+      margin: 25px 0;
+    }
+
+    .mf2go-headline h2 {
+      font-size: 37px;
+      margin: 0;
+      color: #021a6f;
+      font-weight: bold;
+    }
+
+    .present {
+      background-image: url(https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Poklon+sa+textom.png);
+      background-size: cover;
+      height: 380px;
+      width: 103%;
+      overflow: hidden;
+      margin-top: 15px;
+    }
+    .present a.google-play {
+      width: 190px;
+      height: 60px;
+      position: relative;
+      top: 287px;
+      left: 32px;
+      display: block;
+    }
+    .present a.app-store {
+      width: 190px;
+      height: 60px;
+      position: relative;
+      top: 227px;
+      left: 228px;
+      display: block;
+    }
+
+    /* Content first sections (content-image layout) */
+    .leadership,
+    .zajednica,
+    .sanja-i-emina,
+    .prvacici {
+      margin-top: 50px;
+    }
+
+    /* Image first sections (image-content layout) */
+    .tesanj,
+    .podrzavamo-zajednicu,
+    .pcelari {
+      margin-top: 60px;
+    }
+
+    /* Content sections with top-left radius */
+    .leadership-content,
+    .zajednica-content,
+    .sanja-i-emina-content,
+    .prvacici-content {
+      padding: 30px;
+      color: #051b60;
+      background: #ffffff;
+      font-size: 22px;
+      border-top-left-radius: 50px;
+    }
+
+    /* Content sections with bottom-left radius */
+    .tesanj-content,
+    .podrzavamo-zajednicu-content,
+    .pcelari-content {
+      padding: 20px 30px;
+      color: #051b60;
+      background: #ffffff;
+      font-size: 22px;
+      border-bottom-left-radius: 50px;
+    }
+
+    /* All content section paragraphs */
+    .leadership-content p,
+    .tesanj-content p,
+    .zajednica-content p,
+    .podrzavamo-zajednicu-content p,
+    .sanja-i-emina-content p,
+    .pcelari-content p,
+    .prvacici-content p {
+      font-weight: 300;
+      margin: 25px 0;
+    }
+
+    /* All content section headings */
+    .leadership-content h2,
+    .tesanj-content h2,
+    .zajednica-content h2,
+    .podrzavamo-zajednicu-content h2,
+    .sanja-i-emina-content h2,
+    .pcelari-content h2,
+    .prvacici-content h2 {
+      font-size: 37px;
+      margin: 0;
+      color: #021a6f;
+      font-weight: bold;
+    }
+
+    /* Single image sections with bottom-right radius */
+    .leadership-image img,
+    .prvacici-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom-right-radius: 50px;
+    }
+
+    /* Image sections with top-right radius */
+    .tesanj-image img,
+    .pcelari-image img {
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: auto;
+      margin-bottom: -5px;
+      border-top-right-radius: 50px;
+    }
+
+    /* Image container sections with bottom-right radius */
+    .zajednica-images,
+    .sanja-i-emina-images {
+      background: #ffffff;
+      padding: 0;
+      border-bottom-right-radius: 50px;
+    }
+
+    /* Image container sections with top-right radius */
+    .podrzavamo-zajednicu-images {
+      background: #ffffff;
+      padding: 0;
+      border-top-right-radius: 50px;
+    }
+
+    /* All image tables - standard layout */
+    .zajednica-images table,
+    .podrzavamo-zajednicu-images table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    /* Special image table for centered content */
+    .sanja-i-emina-images table {
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+    }
+
+    /* Standard image table cells */
+    .zajednica-images td,
+    .podrzavamo-zajednicu-images td {
+      width: 50%;
+      padding: 0;
+    }
+
+    /* Centered image table cells */
+    .sanja-i-emina-images td {
+      width: 50%;
+      padding: 0;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    /* Standard 50/50 images that fill container */
+    .zajednica-images img,
+    .podrzavamo-zajednicu-images img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Centered images with specific size */
+    .sanja-i-emina-images img {
+      width: 70%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Special elements */
+    .zavod-federacija {
+      border-bottom-right-radius: 50px;
+    }
+
+    .rezultati {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .rezultati img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Special image background containers */
+    .prvacici-image {
+      background: #ffffff;
+      padding: 0;
+      border-bottom-right-radius: 50px;
+    }
+
+    /* Special image styling */
+    .prvacici-image img {
+      height: 250px;
+      object-fit: cover;
+    }
+
+    /* Special element styles */
+    .bijeljina {
+      border-top-right-radius: 50px;
+    }
+
+    .sim-background {
+      background-image: url(https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/detail-shot-patterned-wall.webp);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 250px;
+      border-bottom-right-radius: 50px;
+    }
+
+    .ekskluzivno {
+      margin-top: 60px;
+      background-image: url(https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/ekskluzivno_za_zaposlene.webp);
+      height: 380px;
+      width: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .ekskluzivno a {
+      position: relative;
+      top: 225px;
+      display: block;
+      width: 400px;
+      height: 70px;
+    }
+  </style>
+  <body>
+    <div class="main-container">
+      <div class="container mf-logo">
+        <img
+          src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/mf+group.svg"
+          alt="Mikrofin Logo"
+        />
+      </div>
+      <div class="container logo-strip">
+        <table>
+          <tr>
+            <td>
+              <img
+                src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Mikrofin.svg"
+                alt="Mikrofin"
+              />
+            </td>
+            <td>
+              <img
+                src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Mf+banka.svg"
+                alt="Mf banka"
+              />
+            </td>
+            <td>
+              <img
+                src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Mf+software.svg"
+                alt="Mf software"
+              />
+            </td>
+            <td>
+              <img
+                src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/MF+osiguranje+logo.svg"
+                alt="MF osiguranje"
+              />
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="container mf2go">
+        <div class="mf2go-image">
+          <img
+            src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/MF2GO.avif"
+            alt="MF2GO Image"
+          />
+        </div>
+        <div class="mf2go-content">
+          <div class="mf2go-headline">
+            <h2>
+              MF2GO: Naša nova mobilna banka <br />
+              uspješno lansirana!
+            </h2>
+          </div>
+          <div class="mf2go-text">
+            <p>
+              Lansiranje <b> nove mobilne aplikacije MF2GO </b> je iza nas i s
+              ponosom vas podsjećamo na ostvareni cilj: kreirali smo alat koji
+              bankarske usluge čini jednostavnijim, bržim i dostupnijim
+              klijentima – s bilo kojeg mjesta!
+            </p>
+            <p>
+              Kao što znate, proteklih mjeseci uložili smo značajan trud u ovaj
+              projekat, a MF2GO već donosi prve pozitivne rezultate u vidu
+              poboljšanog korisničkog iskustva.
+            </p>
+            <p>
+              Ako niste, iskoristite priliku da se iz prve ruke uvjerite u njene
+              prednosti. Pozivamo sve kolege koji još uvijek nisu instalirali
+              aplikaciju da to učine već danas i upoznaju sve benefite naše „MF
+              banke za ponijeti“.
+            </p>
+            <p>
+              Aplikaciju možete preuzeti sa Google Play Store (za Android
+              uređaje) ili App Store (za iOS/Apple uređaje)
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="container present">
+        <!-- <h2>TEAM BUILDING TRIK:</h2>
+        <h2>SPREMI SE ZA POKLON!</h2>
+        <p>
+          Pravilo u Cavtatu: MF2GO aplikacija na tvom telefonu otključava
+          iznenađenje!
+        </p>
+        <p>Instaliraj danas! Ne rizikuj da propustiš!</p> -->
+        <a class="google-play" href="#"></a>
+        <a class="app-store" href="#"></a>
+      </div>
+      <div class="container leadership">
+        <div class="leadership-content">
+          <div class="leadership-headline">
+            <h2>
+              Liderstvo koje pokreće promjene <br />
+              – GODINA PRESTIŽNIH PRIZNANJA
+            </h2>
+          </div>
+          <div class="leadership-text">
+            <p>
+              Aleksandar Kremenović, predsjednik Uprave MF banke i osnivač MF
+              grupe, ovogodišnji je dobitnik dvije prestižne nagrade i priznanja
+              -
+              <b
+                >„Evropski najmenadžer & najkompanija" za 2025. godinu i "VELIKA
+                NAGRADA I PRIZNANJE ZA DOPRINOS RAZVOJU PODUZETNIŠTVA U SREDNJOJ
+                I JUGOISTOČNOJ EUROPI "STVARATELJI ZA STOLJEĆA".</b
+              >
+            </p>
+            <p>
+              Ove nagrade, koje dodjeljuju međunarodni nezavisni komiteti,
+              dodijeljene su za izvanredne poslovne rezultate, kontinuirani rast
+              i inovacije, te podršku preduzetništvu. Posebno su prepoznate
+              vrijednosti koje MF grupa živi:
+              <b
+                >društvena odgovornost, pouzdanost i stvaranje pozitivnih
+                promjena u zajednici.</b
+              >
+            </p>
+            <p>
+              "Ova nagrada pripada cijelom timu MF grupe, jer zajedno gradimo
+              povjerenje, stabilnost i nove prilike za sve naše klijente,"
+              poručio je Aleksandar Kremenović.
+            </p>
+            <p>
+              MF grupa nastavlja da bude pouzdan partner ljudima, biznisima i
+              zajednicama.
+            </p>
+          </div>
+        </div>
+        <div class="leadership-image">
+          <img
+            src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Lideri+koji+pokrec%CC%81u+promjene.avif"
+            alt="Lideri koji pokreću promjene"
+          />
+        </div>
+      </div>
+      <div class="container tesanj">
+        <div class="tesanj-image">
+          <img
+            src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Tes%CC%8Canj.avif"
+            alt="Tesanj Image"
+          />
+        </div>
+        <div class="tesanj-content">
+          <div class="tesanj-headline">
+            <h2>
+              MF grupa među ključnim izlagačima na Sajmu privrede u Tešnju
+            </h2>
+          </div>
+          <div class="tesanj-text">
+            <p>
+              MF grupa i njene članice –
+              <b
+                >MF banka, Mikrokreditno društvo Mikrofin i Mikrofin
+                osiguranje</b
+              >
+              i ove godine su se zajedno predstavile na prestižnom Sajmu
+              privrede u Tešnju.
+            </p>
+            <p>
+              Kao pouzdan partner razvoja privrede u Bosni i Hercegovini,
+              ponosni smo što smo se i ovaj put pridružili najvećem događaju
+              ovog tipa za privrednike. Tešanj, kao simbol dinamičnog razvoja,
+              idealno je mjesto za predstavljanje naše Grupe koja podržava
+              pokretače privrede širom BiH.
+            </p>
+            <p>
+              Zahvaljujemo se svim kolegama na aktivnom učešću i predstavljanju
+              naše Grupe u najboljem svjetlu!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="container zajednica">
+        <div class="zajednica-content">
+          <div class="zajednica-headline">
+            <h2>Zajednica koja daruje srcem.</h2>
+          </div>
+          <div class="zajednica-text">
+            <p>
+              Kao društveno odgovorna grupacija, nastavili smo pružati podršku i
+              zdravstvenim ustanovama koje svakodnevno spašavaju živote, pa smo
+              Zavodu za transfuzijsku medicinu Republike Srpske u Banjoj Luci
+              donirali aparat za mjerenje nivoa hemoglobina u krvi, dok je
+              Zavodu za transfuzijsku medicinu Federacije BiH u Sarajevu doniran
+              aparat za mjerenje krvnog pritiska.
+            </p>
+            <p>Mi vjerujemo da zajedno možemo više.</p>
+          </div>
+        </div>
+        <div class="zajednica-images">
+          <table>
+            <tr>
+              <td>
+                <img
+                  src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Zajednica+koja+daruje+srcem.avif"
+                  alt="Zajednica koja daruje srcem"
+                />
+              </td>
+              <td>
+                <img
+                  class="zavod-federacija"
+                  src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Zavod_Federacija-768x1024.avif"
+                  alt="Zavod Federacija"
+                />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="container rezultati">
+        <img
+          src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/rezultati.avif"
+          alt="Rezultati"
+        />
+      </div>
+      <div class="container podrzavamo-zajednicu">
+        <div class="podrzavamo-zajednicu-images">
+          <table>
+            <tr>
+              <td>
+                <img
+                  src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Visoko.avif"
+                  alt="Visoko"
+                />
+              </td>
+              <td>
+                <img
+                  class="bijeljina"
+                  src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Bijeljina1.avif"
+                  alt="Bijeljina"
+                />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="podrzavamo-zajednicu-content">
+          <div class="podrzavamo-zajednicu-headline">
+            <h2>
+              Podržavamo zajednicu, jačamo prisustvo – Tuzla, Bijeljina,
+              Sokolac, Visoko!
+            </h2>
+          </div>
+          <div class="podrzavamo-zajednicu-text">
+            <p>
+              Otvaranjem novih poslovnica dokazujemo posvećenost misiji koju
+              živimo Otvaranjem novih poslovnica dokazujemo posvećenost misiji
+              koju svakodnevno – biti tu gdje nas ljudi trebaju. Svaka nova
+              kancelarija nije samo geografska ekspanzija, već i prilika za
+              građenje dubljih odnosa s ljudima, zajednicama i institucijama.
+            </p>
+            <p>
+              Vođeni tim vrijednostima, simbolično otvaranje poslovnica
+              iskoristili smo kao priliku da podržimo lokalnu zajednicu.
+              Mikrofin je u ovom kvartalu bogatiji za još jednu poslovnicu u
+              <b>Tuzli</b>, tako i u <b>Bijeljini</b>.
+            </p>
+            <p>
+              Takođe, učinili smo našu MF banku dostupnom u još dva grada u BiH.
+              Od ovog mjeseca, naša vrata su otvorena u <b>Sokocu</b> i
+              <b>Visokom</b>.
+            </p>
+            <p>
+              Istovremeno, želimo toplu dobrodošlicu novim članicama i članovima
+              tima koji će osigurati vrhunsku uslugu na novim lokacijama:
+            </p>
+            <p>Tuzla: Selma Rekić</p>
+            <p>Sokolac: Daria Borovčanin i Nina Kravljača</p>
+            <p>Visoko: Midhat Sirčo, Nedžmina Ganić i Enida Džafić</p>
+            <p>Želimo im mnogo uspjeha u radu i radujemo se novim pobjedama!</p>
+          </div>
+        </div>
+      </div>
+      <div class="container sanja-i-emina">
+        <div class="sanja-i-emina-content">
+          <div class="sanja-i-emina-headline">
+            <h2>
+              Sanja i Emina <br />
+              – prvakinje unakrsne prodaje!
+            </h2>
+          </div>
+          <div class="sanja-i-emina-text">
+            <p>
+              Naše kolegice iz Mikrofina, Sanja Šotra i Emina Čaušević,
+              ostvarile su najveći broj prodaja MF Software uređaja za sada.
+            </p>
+            <p>
+              Za svoj izuzetan trud i posvećenost nagrađene su – novim mobilnim
+              telefonom.
+            </p>
+            <p>
+              Njihov uspjeh pokazuje koliko vrijedi proaktivnost, inicijativa i
+              unakrsna saradnja unutar naše grupacije.
+            </p>
+            <p><b>VAŽNO! Nagrada ide dalje!</b></p>
+            <p>MF Software i u nastavku godine nagrađuje najbolje:</p>
+            <p>
+              <b>
+                Najviše prodatih uređaja (uz minimum 10 realizacija) donosi
+                vrijednu nagradu – mobilni telefon ili putovanje u vrijednosti
+                2.000 KM!</b
+              >
+            </p>
+          </div>
+        </div>
+        <div class="sanja-i-emina-images">
+          <div class="sim-background">
+            <table>
+              <tr>
+                <td>
+                  <img
+                    src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Mikrofin.svg"
+                    alt="Mikrofin"
+                  />
+                </td>
+                <td>
+                  <img
+                    src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Mf+software.svg"
+                    alt="MF Software"
+                  />
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="container pcelari">
+        <div class="pcelari-image">
+          <img
+            src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/Donacija+pc%CC%8Celari.webp"
+            alt="Donacija pčelarima"
+          />
+        </div>
+        <div class="pcelari-content">
+          <h2>
+            MF grupa podržala<br />
+            pčelare s invaliditetom!
+          </h2>
+          <p>
+            Ponosni smo što smo, u saradnji sa Organizacijom amputiraca „UDAS“,
+            obezbijedili pčelarsku opremu za <b>23 pčelara s invaliditetom</b>.
+          </p>
+          <p>
+            Pčelarstvo za ove ljude nije samo posao, već i način života koji ih
+            povezuje s prirodom. Naša donacija pomoći će im da unaprijede svoju
+            proizvodnju, ali i da se dodatno <b>ekonomski osnaže</b> i aktivno
+            uključe u društvo.
+          </p>
+          <p>Ovo je ulaganje u <b>dostojanstvo, održivost i zajedništvo!</b></p>
+        </div>
+      </div>
+      <div class="container prvacici">
+        <div class="prvacici-content">
+          <div class="prvacici-headline">
+            <h2>Naši MF prvačići!!</h2>
+          </div>
+          <div class="prvacici-text">
+            <p>
+              Tradicionalno smo i ove godine organizovali prijem za djecu naših
+              zaposlenih koja kreću u školu.
+            </p>
+            <p>
+              Svim našim prvačićima, bez obzira na mjesto događaja, uručili smo
+              i
+              <b>150 KM podrške</b> za kupovinu đačke opreme, kako bismo zajedno
+              uljepšali njihov prvi korak u školske klupe.
+            </p>
+            <p>
+              Našim prvačićima šaljemo veliku podršku i želimo im puno radosti u
+              daljem školovanju!
+            </p>
+          </div>
+        </div>
+        <div class="prvacici-image">
+          <img
+            src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/MF+prvac%CC%8Cic%CC%81i.webp"
+            alt="MF prvačići"
+          />
+        </div>
+      </div>
+      <div class="container ekskluzivno">
+        <a href="#"></a>
+      </div>
+      <div class="container datum">
+        <img
+          src="https://mint-microfin-email-bucket.s3.eu-central-1.amazonaws.com/septembar_2026.webp"
+        />
+      </div>
+    </div>
+  </body>
+</html>
